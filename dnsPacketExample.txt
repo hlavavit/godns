@@ -1,0 +1,61 @@
+API server listening at: 127.0.0.1:2911
+time="2019-09-29T16:16:15+02:00" level=info msg="launching process with args: [C:\\Projects\\go-lang\\godns\\godns\\debug]" layer=debugger
+time="2019-09-29T16:16:15+02:00" level=debug msg=continuing layer=debugger
+Started godns with arguments= []
+Sending message
+Start of ByteArray
+00000100 01000010
+00000001 00000000
+00000000 00000001
+00000000 00000000
+00000000 00000000
+00000000 00000000
+00001000 01100101
+01110001 01110101
+01100001 01100010
+01100001 01101110
+01101011 00000010
+01100011 01111010
+00000000 00000000
+00000001 00000000
+00000001
+End of ByteArray
+
+Received response
+Start of ByteArray
+00000100 01000010 //ID 
+10000001 10000000 //Flags - response, recursion wanted and available - all ok
+00000000 00000001 // One query
+00000000 00000001 // One resource Records
+00000000 00000000 // Zero resource records in auth section
+00000000 00000000 // Zero records in additional section
+//Query section
+00001000 01100101 // 8 e
+01110001 01110101 // q u
+01100001 01100010 // a b
+01100001 01101110 // a n
+01101011 00000010 // k 2
+01100011 01111010 // c z
+00000000          // 0 
+00000000 00000001 // type A 
+00000000 00000001 // class internet
+//Response section 
+11000000 00001100 // Name 11 at beginning means pointer - 12 leads to previous query section
+00000000 00000001 // Type A
+00000000 00000001 // Class Internet
+ 
+00000000 00000000 // TTL 300 seconds
+00000001 00101100 
+
+00000000 00000100 // 4 Length of content 
+                  //content - ip address
+01011010 10110110 // 90 182
+11001101 01101111 //205 111
+End of ByteArray
+time="2019-09-29T16:16:15+02:00" level=debug msg=halting layer=debugger
+Process exiting with code: 0
+
+
+00000000
+00110101 00000000
+00000100 
