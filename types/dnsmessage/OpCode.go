@@ -1,5 +1,9 @@
 package dnsmessage
 
+import (
+	"fmt"
+)
+
 // OpCode for dns message header
 type OpCode uint16
 
@@ -12,3 +16,21 @@ const (
 	OpCodeUpdate            OpCode = 5
 	OpCodeStatefulOperation OpCode = 6
 )
+
+func (op OpCode) String() string {
+	switch op {
+	case OpCodeQuery:
+		return "QUERY"
+	case OpCodeInverse:
+		return "IQUERY"
+	case OpCodeStatus:
+		return "STATUS"
+	case OpCodeNotify:
+		return "NOTIFY"
+	case OpCodeUpdate:
+		return "UPDATE"
+	case OpCodeStatefulOperation:
+		return "STATEFUL_OP"
+	}
+	return fmt.Sprint(uint16(op))
+}
